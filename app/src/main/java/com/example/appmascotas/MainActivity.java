@@ -12,11 +12,12 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnActivityRegistrar, btnActivityListar;
+    Button btnActivityRegistrar, btnActivityListar, btnListarRecycler;
 
     private void loadUI(){
         btnActivityRegistrar = findViewById(R.id.btnActivityRegistrar);
         btnActivityListar = findViewById(R.id.btnActivityListar);
+        btnListarRecycler = findViewById(R.id.btnListarRecycler);
     }
 
     @Override
@@ -32,5 +33,6 @@ public class MainActivity extends AppCompatActivity {
         loadUI();
         btnActivityRegistrar.setOnClickListener((v) -> {startActivity(new Intent(getApplicationContext(), Registrar.class));});
         btnActivityListar.setOnClickListener((v -> {startActivity(new Intent(getApplicationContext(), Listar.class));}));
+        btnListarRecycler.setOnClickListener((v) -> {startActivity(new Intent(getApplicationContext(), ListarCustom.class));});
     }//on crate
 }

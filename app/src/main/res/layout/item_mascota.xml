@@ -47,9 +47,9 @@
 
     <Button
         android:id="@+id/btnEliminar"
-        android:text="Eliminar"
-        android:textSize="12sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:textSize="12sp" />
 
 </LinearLayout>
