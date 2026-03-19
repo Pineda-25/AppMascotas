@@ -69,7 +69,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.ViewHold
         //TextView muestran los datos
         holder.txtNombre.setText(mascota.getNombre());
         holder.txtTipo.setText(mascota.getTipo());
-        holder.txtPeso.setText("Peso" + String.valueOf(mascota.getPesokg()) + "kg.");
+        holder.txtPeso.setText("Peso " + String.valueOf(mascota.getPesokg()) + "kg.");
 
         //botones
         holder.btnEditar.setOnClickListener(v -> {

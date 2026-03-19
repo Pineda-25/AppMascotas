@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AppMascotas"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Actualizar"
+            android:exported="false" />
+        <activity
             android:name=".ListarCustom"
             android:exported="false" />
         <activity
