@@ -33,7 +33,7 @@ public class ListarCustom extends AppCompatActivity implements  MascotaAdapter.O
 
     Button btnEditar, btnEliminar;
 
-    private final String URL = "http://192.168.101.30:3000/mascotas";
+    private final String URL = "http://192.168.1.72:3000/mascotas";
     private void loadUI(){
 
         recyclerMascotas = findViewById(R.id.recyclerMascotas);
@@ -103,16 +103,28 @@ public class ListarCustom extends AppCompatActivity implements  MascotaAdapter.O
 
     @Override
     public void onEditar(int position, Mascota mascota) {
-        // EN QUE REGISTRO SE PUSO CLIC?
-        Toast.makeText(this, "Editar: " + mascota.getId(), Toast.LENGTH_SHORT).show();
-        Intent envio = new Intent(this, Actualizar.class);
-        envio.putExtra("idMascota", mascota.getId());
-        startActivity(envio);
+        Toast.makeText(this, "Editando: " + mascota.getNombre(), Toast.LENGTH_SHORT).show();
 
+        Intent envio = new Intent(this, Actualizar.class);
+
+        // EMPACAMOS TODOS LOS DATOS
+        envio.putExtra("idMascota", mascota.getId());
+        envio.putExtra("tipo", mascota.getTipo());
+        envio.putExtra("nombre", mascota.getNombre());
+        envio.putExtra("color", mascota.getColor());
+        envio.putExtra("peso", mascota.getPesokg());
+
+        startActivity(envio);
     }
 
     @Override
     public void onEliminar(int position, Mascota mascota) {
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        obtenerDatos();
     }
 }
